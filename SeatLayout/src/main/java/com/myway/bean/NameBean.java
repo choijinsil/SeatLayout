@@ -16,8 +16,8 @@ package com.myway.bean;
  * </pre>
  */
 
-public class ClassBean{
-
+public class NameBean{
+ 
 	private String firstName;
 	private String LastName;
 	

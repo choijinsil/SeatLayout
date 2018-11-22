@@ -4,13 +4,12 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONArray;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myway.bean.ClassBean;
+import com.myway.bean.NameBean;
 
 /**
  * 클래스에 대한 설명을 여기에 쓴다.
@@ -57,18 +56,18 @@ public class TestRestController {
 
 	// 같은것으론 GetMapping이 있음.
 	@RequestMapping(value = "/test_choice", method = RequestMethod.GET)
-	public List<ClassBean> testChoice() {
+	public List<NameBean> testChoice() {
 		
-		ClassBean nameBean=new ClassBean();
+		NameBean nameBean=new NameBean();
 		// generic 
 		// 클래스를 다시 만들땐 재시작 해줘야 함.
-		List<ClassBean> list = new ArrayList<ClassBean>();
+		List<NameBean> list = new ArrayList<NameBean>();
 		
 		nameBean.setFirstName("my siri");
 		nameBean.setLastName("choi");
 		list.add(nameBean);
 		
-		nameBean=new ClassBean();
+		nameBean=new NameBean();
 		
 		
 		nameBean.setFirstName("iloveu");
