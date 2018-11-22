@@ -24,6 +24,7 @@ public class TestController {
 	@RequestMapping("/testPage")
 	public String test(){
 		System.out.println("asd");
+		System.out.println("내가추가");
 		return "test";
 	}
 	
