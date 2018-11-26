@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myway.seat.api.bean.NameBean;
+import com.myway.seat.api.model.bean.NameBean;
 import com.myway.seat.common.annotion.ApiVersion;
 
 /**
@@ -35,12 +35,12 @@ public class TestRestController {
 	// 화면에 값이 바로 나오게 할때 rest를 사용한다.
 	// 메이븐 종속성 추가시, maven update, clean, install해줘야 한다. 이때 에러가 안나면 사용가능한 것이다.
 	// 이 데이터를 화면에 뿌려줘.
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@RequestMapping(value = "/test", method = RequestMethod.GET, produces="application/json")
 	public String test() {
 		return "hello";
 	}
 
-	@RequestMapping(value = "/test1", method = RequestMethod.GET)
+	@RequestMapping(value = "/test1", method = RequestMethod.GET, produces="application/json")
 	public List<String> test1() {
 		List<String> list = new ArrayList<String>();
 		list.add("1");
@@ -57,7 +57,7 @@ public class TestRestController {
 	}	
 
 	// 같은것으론 GetMapping이 있음.
-	@RequestMapping(value = "/test_choice", method = RequestMethod.GET)
+	@RequestMapping(value = "/test_choice", method = RequestMethod.GET, produces="application/json")
 	public List<NameBean> testChoice() {
 		
 		NameBean nameBean=new NameBean();

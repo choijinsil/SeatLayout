@@ -1,4 +1,4 @@
-package com.myway.seat.api.bean;
+package com.myway.seat.api.model.bean;
 
 /**
  * 클래스에 대한 설명을 여기에 쓴다.

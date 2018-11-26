@@ -1,7 +1,7 @@
 spring:
   thymeleaf:
     cache: false
-    mode: LEGACYHTML5
+    mode: HTML
     #encoding: euc-kr
     encoding: utf-8
   datasource:
@@ -9,16 +9,25 @@ spring:
       validation-query: SELECT 1
       validation-interval: 34000
       test-on-borrow: true
+  h2:
+    console:
+      enabled: true
 management.endpoints.web.exposure.include: '*'    
-
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+  - classpath*:mapper/*.xml
+  type-aliases-package: com/myway/seat/api/model/entity
 ---
 spring:
   profiles: default, local
-  datasource:
+  datasource:    
+    initialization-mode: always
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     url: "jdbc:log4jdbc:mysql://127.0.0.1:3306/H_Support_Seat"
     username: "root"
     password: "1234"
   devtools:
     restart:
-      enabled: false
+      enabled: true
