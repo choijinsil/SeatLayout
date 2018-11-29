@@ -8,10 +8,8 @@
 		<result property="itemDesc" column="item_description"/>
 	</resultMap>
 	
-	
-	
     <select id="findAll" resultMap="Item">
-        SELECT * FROM item  
+        SELECT * FROM item
     </select>
     
     <select id="findItemById" resultMap="Item">
