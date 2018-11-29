@@ -31,8 +31,8 @@ public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Long 	seq;
-	private String 	userId;
+	private Long 	id;
+	private String 	accountId;
 	private String 	userNm;
 	private Boolean enabled;
 	

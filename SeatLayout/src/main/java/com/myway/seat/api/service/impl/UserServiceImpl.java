@@ -43,18 +43,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User findUserById(String userId) {
+	public User findUserById(String accountId) {
 		// TODO Auto-generated method stub
 		return Optional
-				.ofNullable(userMapper.findUserById(userId))
+				.ofNullable(userMapper.findUserByAccountId(accountId))
 				.orElseGet(User::new);
 	}
 	
 	@Override
-	public User findUserByIdXml(String userId) {
+	public User findUserByIdXml(String accountId) {
 		// TODO Auto-generated method stub
 		return Optional
-				.ofNullable(userMapper.findUserByIdXml(userId))
+				.ofNullable(userMapper.findUserByAccountIdXml(accountId))
 				.orElseGet(User::new);	
 	}
 

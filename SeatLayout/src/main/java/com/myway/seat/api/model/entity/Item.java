@@ -30,7 +30,7 @@ public class Item implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Long 	seq;
+	private Long 	id;
 	private String 	itemGrp;
 	private String 	itemNm;
 	private Integer itemPrice;

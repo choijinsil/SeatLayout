@@ -64,12 +64,12 @@ public class UserRestController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
-	@ApiOperation(value="user 테이블 조회, 조건: user_id, Mapper class 내부에서 sql 사용")
-	@RequestMapping(value = "/users/{userId}", method = RequestMethod.GET, produces="application/json")
-	public ResponseEntity<User> findUser(@PathVariable("userId") String userId) {
+	@ApiOperation(value="user 테이블 조회, 조건: accountId, Mapper class 내부에서 sql 사용")
+	@RequestMapping(value = "/users/{accountId}", method = RequestMethod.GET, produces="application/json")
+	public ResponseEntity<User> findUser(@PathVariable("accountId") String accountId) {
 		User user;
 		try {
-			user = userService.findUserById(userId);
+			user = userService.findUserById(accountId);
 		} catch(Exception e) {
 			e.printStackTrace();
 			throw new MyCustomException();
@@ -78,11 +78,11 @@ public class UserRestController {
 	}
 	
 	@ApiOperation(value="user 테이블 조회, 조건: user_id, xml 분리 방식1 - resultType 객체를 entity의 Alias방식으로 설정함")
-	@RequestMapping(value = "/users/{userId}/xml", method = RequestMethod.GET, produces="application/json")
-	public ResponseEntity<User> findUserByIdXml(@PathVariable("userId") String userId) {		
+	@RequestMapping(value = "/users/{accountId}/xml", method = RequestMethod.GET, produces="application/json")
+	public ResponseEntity<User> findUserByIdXml(@PathVariable("accountId") String accountId) {		
 		User user;
 		try {
-			user = userService.findUserByIdXml(userId);
+			user = userService.findUserByIdXml(accountId);
 		} catch(Exception e) {
 			e.printStackTrace();
 			throw new MyCustomException();

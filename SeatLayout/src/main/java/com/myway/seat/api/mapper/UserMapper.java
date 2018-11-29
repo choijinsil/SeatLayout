@@ -32,9 +32,9 @@ public interface UserMapper {
 	List<User> findAll();
 	
 
-    @Select("SELECT * FROM user WhERE user_id = #{userId}")
-    User findUserById(String userId);
+    @Select("SELECT * FROM user WhERE account_id = #{accountId}")
+    User findUserByAccountId(String accountId);
 
     // 쿼리를 분리한 메소드
-    User findUserByIdXml(String userId);
+    User findUserByAccountIdXml(String accountId);
 }
