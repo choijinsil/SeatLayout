@@ -15,7 +15,7 @@ INSERT INTO item (item_nm, item_group, item_price, enabled) VALUES ('주황색�
 INSERT INTO item (item_nm, item_group, item_price, enabled) VALUES ('빨강색색지', 'I0003', '500', true);
 
 
-INSERT into buy (user_id,item_id) values(1,2)
-INSERT into buy (user_id,item_id) values(1,3)
-INSERT into buy (user_id,item_id) values(2,4)
-INSERT into buy (user_id,item_id) values(3,4)
+INSERT into buy (user_seq,item_seq) values(1,2);
+INSERT into buy (user_seq,item_seq) values(1,3);
+INSERT into buy (user_seq,item_seq) values(2,4);
+INSERT into buy (user_seq,item_seq) values(3,4);
