@@ -3,6 +3,7 @@ package com.myway.seat.api.service;
 import java.util.List;
 
 import com.myway.seat.api.model.entity.User;
+import com.myway.seat.api.model.param.UserParam;
 
 /**
  * 클래스에 대한 설명을 여기에 쓴다.
@@ -26,4 +27,6 @@ public interface UserService {
 	User findUserById(String userId);
 	
 	User findUserByIdXml(String userId);
+	
+	void saveUserXml(UserParam userParam);
 }

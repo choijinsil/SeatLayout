@@ -7,11 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.myway.seat.api.model.entity.User;
+import com.myway.seat.api.model.param.UserParam;
 import com.myway.seat.api.service.UserService;
 import com.myway.seat.common.annotion.ApiVersion;
 import com.myway.seat.common.exception.BaseException;
@@ -85,6 +87,15 @@ public class UserRestController {
 			throw new MyCustomException();
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
+	}
+	
+	@ApiOperation(value="user 테이블 저장")
+	@RequestMapping(value="/users", method = RequestMethod.POST)
+	public ResponseEntity<Void> saveUser(@RequestBody UserParam userParam) {
+		
+		System.out.println("userParam>>>>"+userParam);
+		userService.saveUserXml(userParam);
+		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 
 }

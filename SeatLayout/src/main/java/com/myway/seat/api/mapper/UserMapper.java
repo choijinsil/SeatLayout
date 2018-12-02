@@ -23,6 +23,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.myway.seat.api.model.entity.User;
+import com.myway.seat.api.model.param.UserParam;
 
 
 @Mapper
@@ -37,4 +38,6 @@ public interface UserMapper {
 
     // 쿼리를 분리한 메소드
     User findUserByAccountIdXml(String accountId);
+    
+    void saveUserXml(UserParam userParam);
 }

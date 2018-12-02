@@ -6,4 +6,9 @@
     <select id="findUserByAccountIdXml" resultType="User">
         SELECT * FROM user WhERE account_id = #{userId}
     </select>
+    
+    <insert id="saveUserXml" parameterType="com.myway.seat.api.model.param.UserParam">
+   	 insert into user(account_id,user_nm,enabled) VALUES(#{accountId},#{userNm},true);
+
+    </insert>
 </mapper>

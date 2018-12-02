@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.myway.seat.api.mapper.UserMapper;
 import com.myway.seat.api.model.entity.User;
+import com.myway.seat.api.model.param.UserParam;
 import com.myway.seat.api.service.UserService;
 
 /**
@@ -56,6 +57,11 @@ public class UserServiceImpl implements UserService {
 		return Optional
 				.ofNullable(userMapper.findUserByAccountIdXml(accountId))
 				.orElseGet(User::new);	
+	}
+
+	@Override
+	public void saveUserXml(UserParam userParam) {
+		userMapper.saveUserXml(userParam);
 	}
 
 }
