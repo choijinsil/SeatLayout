@@ -34,6 +34,6 @@ public interface ItemMapper {
 	
 	List<Item> findItemByGroup(String itemGrp);
 	
-	Item findItemById(String userId);
+	Item findItemById(String itemId);
 
 }

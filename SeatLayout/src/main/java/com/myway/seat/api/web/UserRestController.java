@@ -42,9 +42,6 @@ public class UserRestController {
 	
 	private final UserService userService;
 	
-	
-	
-	
 	public UserRestController(UserService userService) {
 		super();
 		this.userService = userService;
