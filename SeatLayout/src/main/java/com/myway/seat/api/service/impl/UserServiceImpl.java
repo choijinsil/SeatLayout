@@ -3,10 +3,12 @@ package com.myway.seat.api.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.myway.seat.api.mapper.UserMapper;
+import com.myway.seat.api.model.bean.UserBean;
 import com.myway.seat.api.model.entity.User;
 import com.myway.seat.api.model.param.UserParam;
 import com.myway.seat.api.service.UserService;
@@ -60,8 +62,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void saveUserXml(UserParam userParam) {
-		userMapper.saveUserXml(userParam);
+	public UserBean saveUserXml(UserParam userParam) {
+		User user = new User();
+		UserBean userBean = new UserBean();
+		user.setEnabled(true);
+		BeanUtils.copyProperties(userParam, user);
+		int cnt = userMapper.saveUserXml(user);		
+		System.out.println("cnt>>>"+cnt);
+		BeanUtils.copyProperties(user, userBean);
+		return userBean;
 	}
 
 }

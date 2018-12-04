@@ -2,6 +2,7 @@ package com.myway.seat.api.service;
 
 import java.util.List;
 
+import com.myway.seat.api.model.bean.UserBean;
 import com.myway.seat.api.model.entity.User;
 import com.myway.seat.api.model.param.UserParam;
 
@@ -28,5 +29,5 @@ public interface UserService {
 	
 	User findUserByIdXml(String userId);
 	
-	void saveUserXml(UserParam userParam);
+	UserBean saveUserXml(UserParam userParam);
 }

@@ -3,6 +3,7 @@ package com.myway.seat.api.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import com.myway.seat.api.model.bean.UserBean;
 import com.myway.seat.api.model.entity.User;
 import com.myway.seat.api.model.param.UserParam;
 import com.myway.seat.api.service.UserService;
@@ -91,11 +94,23 @@ public class UserRestController {
 	
 	@ApiOperation(value="user 테이블 저장")
 	@RequestMapping(value="/users", method = RequestMethod.POST)
-	public ResponseEntity<Void> saveUser(@RequestBody UserParam userParam) {
+	public ResponseEntity<UserBean> saveUser(@RequestBody UserParam userParam, UriComponentsBuilder builder) {
 		
 		System.out.println("userParam>>>>"+userParam);
-		userService.saveUserXml(userParam);
-		return new ResponseEntity<Void>(HttpStatus.CREATED);
+		
+		HttpHeaders headers = new HttpHeaders();
+		UserBean returnObj = new UserBean();
+		try {
+			returnObj = userService.saveUserXml(userParam);
+			if(returnObj.getId() == null) {
+				returnObj = new UserBean();
+				return new ResponseEntity<UserBean>(returnObj, HttpStatus.CONFLICT);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new ResponseEntity<UserBean>(returnObj, HttpStatus.CREATED);
 	}
 
 }
