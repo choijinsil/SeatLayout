@@ -39,5 +39,6 @@ public interface UserMapper {
     // 쿼리를 분리한 메소드
     User findUserByAccountIdXml(String accountId);
     
-    void saveUserXml(UserParam userParam);
+    int saveUserXml(UserParam userParam);
+    int saveUserXml(User userParam);
 }
