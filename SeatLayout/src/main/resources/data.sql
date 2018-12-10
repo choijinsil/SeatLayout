@@ -25,8 +25,8 @@ INSERT into save (id,user_id,item_id,item_price) values(2,33,32,500);
 INSERT into save (id,user_id,item_id,item_price) values(3,44,33,700);
 INSERT into save (id,user_id,item_id,item_price) values(4,123,53,300);
 -- member table insert
-INSERT INTO member(passwoed, user_name,phone_num,create_date) VALUES ('1111', 'siri1','01087875536','181210');
-INSERT INTO member(passwoed, user_name,phone_num,create_date) VALUES ('2222', 'siri2','1234567890','181201');
-INSERT INTO member(passwoed, user_name,phone_num,create_date) VALUES ('3333', 'siri3','01087875536','181203');
-INSERT INTO member(passwoed, user_name,phone_num,create_date) VALUES ('4444', 'siri4','01087875536','181206');
+INSERT INTO member(passwoed,user_name,phone_num,create_date) VALUES ('1111', 'siri1','01087875536','181210');
+INSERT INTO member(passwoed,user_name,phone_num,create_date) VALUES ('2222', 'siri2','1234567890','181201');
+INSERT INTO member(passwoed,user_name,phone_num,create_date) VALUES ('3333', 'siri3','01087875536','181203');
+INSERT INTO member(passwoed,user_name,phone_num,create_date) VALUES ('4444', 'siri4','01087875536','181206');
 
