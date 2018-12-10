@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.javassist.compiler.ast.Member;
+
+import com.myway.seat.api.model.entity.Member;
+
 
 /**
  * 클래스에 대한 설명을 여기에 쓴다.

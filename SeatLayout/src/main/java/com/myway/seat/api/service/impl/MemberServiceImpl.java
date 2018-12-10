@@ -3,9 +3,8 @@ package com.myway.seat.api.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.ibatis.javassist.compiler.ast.Member;
-
 import com.myway.seat.api.mapper.MemberMapper;
+import com.myway.seat.api.model.entity.Member;
 import com.myway.seat.api.service.MemberService;
 
 /**
@@ -45,7 +44,6 @@ public class MemberServiceImpl implements MemberService {
 		return Optional
 				.ofNullable(memberMapper.findMemberByUserName(user_name))
 				.orElseGet(Member::new);
-		
 	}
 
 	@Override
@@ -55,7 +53,5 @@ public class MemberServiceImpl implements MemberService {
 				.ofNullable(memberMapper.findMemberByUserNameXml(user_name))
 				.orElseGet(Member::new);
 	}
-
-	
 
 }
