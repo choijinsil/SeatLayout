@@ -28,7 +28,7 @@ import org.apache.ibatis.type.Alias;
 @Data
 @Alias("User")
 public class User implements Serializable {
-	
+	 
 	private static final long serialVersionUID = 1L;
 	
 	private Long 	id;
