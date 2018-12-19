@@ -21,12 +21,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 // 리턴되는 화면이 있으면 Controller 아니면 RestController
 @Controller
 public class TestController {
-	@RequestMapping("/testPage")
+	//thymeleaf 테스트용
+	@RequestMapping("/test_thymeleaf")
 	public String test(){
 		System.out.println("asd");
 		System.out.println("내가추가");
-		return "test";
+		return "thymeleaf/test";
 	}
 	
-
+	//jsp 테스트용
+	@RequestMapping("/test_jsp")
+	public String test_jsp(){
+		System.out.println("jsp");
+		System.out.println("jsp 추가연결");
+		return "jsp/test";
+	}
 }

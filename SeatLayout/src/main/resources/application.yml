@@ -4,6 +4,7 @@ spring:
     mode: HTML
     #encoding: euc-kr
     encoding: utf-8
+    view-names: thymeleaf/*    
   datasource:
     tomcat:
       validation-query: SELECT 1
@@ -12,6 +13,11 @@ spring:
   h2:
     console:
       enabled: true
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+      view-names: jsp/*      
 management.endpoints.web.exposure.include: '*'    
 mybatis:
   configuration:
