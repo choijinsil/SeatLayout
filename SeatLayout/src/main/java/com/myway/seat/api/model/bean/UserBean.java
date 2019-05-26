@@ -22,6 +22,7 @@ import lombok.ToString;
  * </pre>
  */
 
+//사용자에게만 보내주는 정보라 pass필요 없음 
 @Data
 @ToString(callSuper=true)
 public class UserBean implements Serializable {/**
